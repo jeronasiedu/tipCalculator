@@ -76,18 +76,7 @@ label {
   color: var(--grayish-cyan);
   margin-bottom: 0.2rem;
 }
-label[for='people'] {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-span.errorMessage {
-  color: rgb(255, 81, 0);
-  display: none;
-}
-span.errorMessage.invalid {
-  display: block;
-}
+
 input.standard.invalid {
   outline: 3px solid rgb(255, 81, 0);
 }

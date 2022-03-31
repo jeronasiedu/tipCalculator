@@ -2,7 +2,6 @@ const btns = document.querySelectorAll('.btn')
 const billInput = document.querySelector('.billInput')
 const peopleInput = document.querySelector('#people')
 const customInput = document.querySelector('#custom')
-const errorMessage = document.querySelector('.errorMessage')
 const tip = document.querySelector('#tip')
 const totalTip = document.querySelector('#total')
 const resetBtn = document.querySelector('.reset')
@@ -56,10 +55,8 @@ billInput.addEventListener('blur', (e) => {
 peopleInput.addEventListener('blur', (e) => {
   if (e.target.value.length === 0) {
     peopleInput.classList.add('invalid')
-    errorMessage.style.display = 'block'
   } else {
     peopleInput.classList.remove('invalid')
-    errorMessage.style.display = 'none'
     calculateTip(numberOfPeople, percent, amount)
   }
 })
