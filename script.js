@@ -17,6 +17,7 @@ btns.forEach((btn) => {
     })
     e.target.classList.add('active')
     percent = btn.getAttribute('data-percent')
+    customInput.value = ''
     calculateTip(numberOfPeople, percent, amount)
   })
 })
