@@ -1,7 +1,7 @@
 const btns = document.querySelectorAll('.btn')
 const billInput = document.querySelector('.billInput')
 const peopleInput = document.querySelector('#people')
-const customInput = document.querySelector('#custom')
+const customInput = document.querySelector('.custom')
 const tip = document.querySelector('#tip')
 const totalTip = document.querySelector('#total')
 const resetBtn = document.querySelector('.reset')
@@ -17,6 +17,8 @@ btns.forEach((btn) => {
     e.target.classList.add('active')
     percent = btn.getAttribute('data-percent')
     customInput.value = ''
+    customInput.classList.remove('active')
+
     calculateTip(numberOfPeople, percent, amount)
   })
 })
@@ -34,6 +36,13 @@ customInput.addEventListener('input', (e) => {
   })
   percent = e.target.value
   calculateTip(numberOfPeople, percent, amount)
+})
+customInput.addEventListener('blur', (e) => {
+  if (e.target.value.length > 0) {
+    customInput.classList.add('active')
+  } else {
+    customInput.classList.remove('active')
+  }
 })
 // Calculate Tip
 const calculateTip = (numberOfPeople, percent, amount) => {

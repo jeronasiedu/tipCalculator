@@ -68,6 +68,9 @@ input {
   font-family: inherit;
   width: 100%;
 }
+input:focus {
+  outline: 3px solid var(--strong-cyan);
+}
 input:focus + .icon {
   stroke: var(--strong-cyan);
 }
@@ -86,7 +89,6 @@ input.standard.invalid {
   padding: 0.3rem;
   padding-left: 1.9rem;
   font-size: var(--font-size);
-
   font-weight: 700;
 }
 input.standard::placeholder {
@@ -95,13 +97,15 @@ input.standard::placeholder {
 input[type='number']::-webkit-inner-spin-button {
   appearance: none;
 }
-input:focus {
-  outline: 3px solid var(--strong-cyan);
-}
+
 .custom {
   font-size: 1.2em;
   padding: 0.2rem 0.4rem;
   font-size: var(--font-size);
+  font-weight: 700;
+}
+.custom.active {
+  outline: 3px solid var(--grayish-cyan);
 }
 .custom::placeholder {
   color: var(--very-dark-cyan);
