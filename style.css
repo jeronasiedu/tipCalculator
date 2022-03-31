@@ -192,9 +192,7 @@ small {
 .reset:hover {
   background: var(--light-grayish-cyan);
 }
-.reset:focus {
-  background: var(--light-grayish-cyan);
-}
+
 @media (max-width: 680px) {
   .container {
     flex-direction: column;
