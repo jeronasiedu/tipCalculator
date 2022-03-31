@@ -36,7 +36,7 @@ h1 {
   padding: 2rem 1.5rem;
   border-radius: 1rem;
   display: flex;
-  width: min(95%, 50rem);
+  width: min(93%, 50rem);
   gap: 1rem;
 }
 .calculator,

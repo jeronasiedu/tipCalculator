@@ -5,6 +5,7 @@ const customInput = document.querySelector('#custom')
 const errorMessage = document.querySelector('.errorMessage')
 const tip = document.querySelector('#tip')
 const totalTip = document.querySelector('#total')
+const resetBtn = document.querySelector('.reset')
 let numberOfPeople = null
 let amount = null
 let percent = null
@@ -60,4 +61,18 @@ peopleInput.addEventListener('blur', (e) => {
     errorMessage.style.display = 'none'
     calculateTip(numberOfPeople, percent, amount)
   }
+})
+// resetting calculator
+resetBtn.addEventListener('click', () => {
+  btns.forEach((item) => {
+    item.classList.remove('active')
+  })
+  billInput.value = ''
+  peopleInput.value = ''
+  customInput.value = ''
+  numberOfPeople = null
+  amount = null
+  percent = null
+  tip.textContent = `$`
+  totalTip.textContent = `$`
 })
