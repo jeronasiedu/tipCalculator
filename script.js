@@ -39,14 +39,17 @@ const calculateTip = (numberOfPeople, percent, amount) => {
   if (!numberOfPeople || !amount || !percent) return
   const tipPerPerson = ((percent / 100) * amount).toFixed(2)
   const sumOfTip = (tipPerPerson * numberOfPeople).toFixed(2)
-  tip.textContent = tipPerPerson
-  totalTip.textContent = sumOfTip
+  tip.textContent = `$${tipPerPerson}`
+  totalTip.textContent = `$${sumOfTip}`
 }
 // CHECKING FOR INVALID INPUT VALUES OR NULL
 billInput.addEventListener('blur', (e) => {
   if (e.target.value.length === 0) {
     billInput.classList.add('invalid')
-  } else billInput.classList.remove('invalid')
+  } else {
+    billInput.classList.remove('invalid')
+    calculateTip(numberOfPeople, percent, amount)
+  }
 })
 peopleInput.addEventListener('blur', (e) => {
   if (e.target.value.length === 0) {
@@ -55,5 +58,6 @@ peopleInput.addEventListener('blur', (e) => {
   } else {
     peopleInput.classList.remove('invalid')
     errorMessage.style.display = 'none'
+    calculateTip(numberOfPeople, percent, amount)
   }
 })
