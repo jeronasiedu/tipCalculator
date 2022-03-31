@@ -178,8 +178,10 @@ small {
   font-family: inherit;
   font-weight: 700;
 }
-.reset:hover {
-  background: var(--light-grayish-cyan);
+@media (min-width: 680px) {
+  .reset:hover {
+    background: var(--light-grayish-cyan);
+  }
 }
 
 @media (max-width: 680px) {
