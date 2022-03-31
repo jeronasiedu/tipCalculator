@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --font-size: 1.5rem;
+}
+body {
+  font-family: 'space mono', 'sans serif';
+  background: var(--light-grayish-cyan);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+h1 {
+  background: -webkit-linear-gradient(to right, var(--strong-cyan), #3c32cc);
+  background: linear-gradient(to right, var(--strong-cyan), #3c32cc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.container {
+  background: var(--white);
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  width: min(95%, 50rem);
+  gap: 1rem;
+}
+.calculator,
+.results-container {
+  flex: 1;
+}
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+div {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 0.2rem;
+  stroke: var(--grayish-cyan);
+}
+input {
+  outline: none;
+  background: var(--very-light-grayish-cyan);
+  border: none;
+  border-radius: 0.2rem;
+  color: var(--very-dark-cyan);
+  text-align: right;
+  font-family: inherit;
+  width: 100%;
+}
+input:focus + .icon {
+  stroke: var(--strong-cyan);
+}
+label {
+  font-size: 1.1rem;
+  color: var(--grayish-cyan);
+  margin-bottom: 0.2rem;
+}
+label[for='people'] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+span.errorMessage {
+  color: rgb(255, 81, 0);
+  display: none;
+}
+span.errorMessage.invalid {
+  display: block;
+}
+input.standard.invalid {
+  outline: 3px solid rgb(255, 81, 0);
+}
+
+.calculator input.standard {
+  display: block;
+  padding: 0.3rem;
+  padding-left: 1.9rem;
+  font-size: var(--font-size);
+
+  font-weight: 700;
+}
+input.standard::placeholder {
+  color: var(--grayish-cyan);
+}
+input[type='number']::-webkit-inner-spin-button {
+  appearance: none;
+}
+input:focus {
+  outline: 3px solid var(--strong-cyan);
+}
+.custom {
+  font-size: 1.2em;
+  padding: 0.2rem 0.4rem;
+  font-size: var(--font-size);
+}
+.custom::placeholder {
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+}
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.btn {
+  background: var(--very-dark-cyan);
+  color: var(--grayish-cyan);
+  font-weight: 700;
+  padding: 0.3rem 0.5rem;
+  font-family: inherit;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  outline: none;
+  border: none;
+  transition: 0.5s background-color, 0.5s color;
+}
+
+.btn:hover {
+  background: var(--light-grayish-cyan);
+  color: #000;
+}
+.btn.active {
+  background: var(--strong-cyan);
+  color: #000;
+}
+button:focus {
+  outline: 4px solid var(--light-grayish-cyan);
+}
+
+.results-container {
+  background: var(--very-dark-cyan);
+  border-radius: 0.5rem;
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.results-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+small {
+  color: var(--grayish-cyan);
+}
+.results-item p {
+  color: var(--light-grayish-cyan);
+}
+.results-item span {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--strong-cyan);
+  font-weight: 700;
+}
+.reset {
+  margin-top: auto;
+  text-transform: uppercase;
+  padding: 0.5rem 0.3rem;
+  font-size: 1.1rem;
+  border-radius: 0.2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: var(--strong-cyan);
+  transition: 0.5s;
+  font-family: inherit;
+  font-weight: 700;
+}
+.reset:hover {
+  background: var(--light-grayish-cyan);
+}
+@media (max-width: 680px) {
+  .container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 420px) {
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

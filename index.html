@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tip calculator app</title>
+  </head>
+  <body>
+    <h1>Tip calculator</h1>
+    <main class="container">
+      <div class="calculator">
+        <div>
+          <label for="bill">Bill</label>
+          <input
+            type="number"
+            name=""
+            id="bill"
+            class="standard billInput"
+            min="1"
+            placeholder="0"
+            required
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon"
+          >
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+        <div class="options">
+          <button class="btn" data-percent="5">5%</button>
+          <button class="btn" data-percent="10">10%</button>
+          <button class="btn" data-percent="15">15%</button>
+          <button class="btn" data-percent="25">25%</button>
+          <button class="btn" data-percent="50">50%</button>
+          <input
+            type="number"
+            name=""
+            id="custom"
+            placeholder="Custom"
+            class="custom"
+          />
+        </div>
+        <div>
+          <label for="people"
+            ><span>Number of People</span>
+            <span class="errorMessage"> can't be zero </span>
+          </label>
+          <input
+            type="number"
+            name=""
+            id="people"
+            class="standard"
+            min="1"
+            required
+            placeholder="0"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+          </svg>
+        </div>
+      </div>
+      <div class="results-container">
+        <div class="results-item">
+          <div>
+            <p>Tip Amount</p>
+            <small>/ Person</small>
+          </div>
+          <span id="tip">$0.00</span>
+        </div>
+        <div class="results-item">
+          <div>
+            <p>Total</p>
+            <small>/ Person</small>
+          </div>
+          <span id="total">$0.00</span>
+        </div>
+        <button class="reset">Reset</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
