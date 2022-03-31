@@ -185,6 +185,10 @@ small {
 @media (max-width: 680px) {
   .container {
     flex-direction: column;
+    gap: 1.3rem;
+  }
+  .calculator {
+    gap: 1.7rem;
   }
 }
 @media (max-width: 420px) {
