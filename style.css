@@ -185,11 +185,14 @@ small {
   border: none;
   cursor: pointer;
   background: var(--strong-cyan);
-  transition: 0.5s;
+  transition: 0.5s background-color, 0.5s color;
   font-family: inherit;
   font-weight: 700;
 }
 .reset:hover {
+  background: var(--light-grayish-cyan);
+}
+.reset:focus {
   background: var(--light-grayish-cyan);
 }
 @media (max-width: 680px) {
