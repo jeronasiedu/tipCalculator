@@ -73,6 +73,6 @@ resetBtn.addEventListener('click', () => {
   numberOfPeople = null
   amount = null
   percent = null
-  tip.textContent = `$`
-  totalTip.textContent = `$`
+  tip.textContent = `$0.00`
+  totalTip.textContent = `$0.00`
 })
