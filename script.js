@@ -62,7 +62,7 @@ billInput.addEventListener('blur', (e) => {
   }
 })
 peopleInput.addEventListener('blur', (e) => {
-  if (e.target.value.length === 0) {
+  if (e.target.value === 0) {
     peopleInput.classList.add('invalid')
   } else {
     peopleInput.classList.remove('invalid')
