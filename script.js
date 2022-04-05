@@ -5,7 +5,7 @@ const customInput = document.querySelector('.custom')
 const tip = document.querySelector('#tip')
 const totalTip = document.querySelector('#total')
 const resetBtn = document.querySelector('.reset')
-let numberOfPeople = null
+let numberOfPeople = 1
 let amount = null
 let percent = null
 // Adding active  state to buttons
@@ -77,7 +77,7 @@ resetBtn.addEventListener('click', () => {
   billInput.value = ''
   peopleInput.value = ''
   customInput.value = ''
-  numberOfPeople = null
+  numberOfPeople = 1
   amount = null
   percent = null
   tip.textContent = `$0.00`
